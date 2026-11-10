@@ -31,10 +31,11 @@
   <nav class="nav-links" id="nav-links">
     <a href="#timeline" data-i="01">百年纪事</a>
     <a href="#campus" data-i="02">校园漫游</a>
-    <a href="#sound" data-i="03">声音地图</a>
-    <a href="#data" data-i="04">数据画卷</a>
-    <a href="#game" data-i="05">拾忆游戏</a>
-    <a href="#ai" data-i="06">AI 寄语</a>
+    <a href="#gallery" data-i="03">校园掠影</a>
+    <a href="#wish" data-i="04">百年祝福</a>
+    <a href="#data" data-i="05">数据画卷</a>
+    <a href="#game" data-i="06">拾忆游戏</a>
+    <a href="#ai" data-i="07">AI 寄语</a>
   </nav>
   <button class="menu-btn" id="menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
   <div class="nav-progress"><i id="nav-progress"></i></div>
@@ -176,54 +177,15 @@
     <div class="campus-layout">
       <div class="map-box reveal">
         <div class="map-stage" id="map-stage">
-          <svg id="campus-map" viewBox="0 0 1000 680" preserveAspectRatio="xMidYMid meet" aria-label="广州大学校园示意地图">
-            <defs>
-              <radialGradient id="lakeG" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#2b6fae" />
-                <stop offset="100%" stop-color="#123a6b" />
-              </radialGradient>
-              <linearGradient id="roadG" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#22304d" />
-                <stop offset="100%" stop-color="#182238" />
-              </linearGradient>
-            </defs>
-            <rect class="map-bg" width="1000" height="680" rx="18" />
-            <!-- 珠江 / 水道 -->
-            <path class="map-river" d="M -10 560 C 180 520 340 600 520 560 S 820 500 1010 540" />
-            <path class="map-river2" d="M -10 600 C 200 660 420 560 640 620 S 900 660 1010 600" />
-            <!-- 中心湖 -->
-            <ellipse class="map-lake" cx="560" cy="300" rx="120" ry="80" fill="url(#lakeG)" />
-            <!-- 道路 -->
-            <path class="map-road" d="M 120 620 C 260 480 300 320 520 240 S 780 160 900 220" />
-            <path class="map-road" d="M 200 80 C 300 180 380 300 560 300 S 820 320 900 420" />
-            <!-- 建筑 -->
-            <g class="map-bld" transform="translate(170,150)"><rect width="120" height="80" rx="8" /><text x="60" y="46">图书馆</text></g>
-            <g class="map-bld" transform="translate(360,110)"><rect width="110" height="70" rx="8" /><text x="55" y="40">演艺中心</text></g>
-            <g class="map-bld" transform="translate(620,120)"><rect width="100" height="64" rx="8" /><text x="50" y="37">文清楼</text></g>
-            <g class="map-bld" transform="translate(730,240)"><rect width="110" height="70" rx="8" /><text x="55" y="40">体育馆</text></g>
-            <g class="map-bld" transform="translate(300,430)"><rect width="110" height="66" rx="8" /><text x="55" y="38">教学楼群</text></g>
-            <g class="map-bld" transform="translate(80,360)"><rect width="100" height="60" rx="8" /><text x="50" y="35">桂花岗</text></g>
-            <!-- 树木点缀 -->
-            <g class="map-trees" fill="none" stroke="#2f6b4f" stroke-width="0">
-              <circle cx="470" cy="200" r="9" /><circle cx="500" cy="215" r="7" /><circle cx="660" cy="330" r="8" />
-              <circle cx="240" cy="300" r="8" /><circle cx="850" cy="380" r="9" /><circle cx="400" cy="520" r="8" />
-            </g>
-            <!-- 校训石 -->
-            <g class="map-stone" transform="translate(480,270)">
-              <rect width="26" height="44" rx="4" />
-              <text x="13" y="26">训</text>
-            </g>
-            <!-- 交互热点 -->
-            <g class="hotspots">
-              <g class="hot" data-spot="library" transform="translate(230,190)"><circle r="14" /><text y="4">1</text></g>
-              <g class="hot" data-spot="center" transform="translate(415,145)"><circle r="14" /><text y="4">2</text></g>
-              <g class="hot" data-spot="lake" transform="translate(560,300)"><circle r="14" /><text y="4">3</text></g>
-              <g class="hot" data-spot="motto" transform="translate(493,292)"><circle r="12" /><text y="3">4</text></g>
-              <g class="hot" data-spot="teaching" transform="translate(355,463)"><circle r="14" /><text y="4">5</text></g>
-              <g class="hot" data-spot="stadium" transform="translate(785,275)"><circle r="14" /><text y="4">6</text></g>
-              <g class="hot" data-spot="gui" transform="translate(130,390)"><circle r="14" /><text y="4">7</text></g>
-            </g>
-          </svg>
+          <img class="map-photo" src="images/aerial.jpg" alt="广州大学大学城校区航拍图" />
+          <div class="map-overlay" aria-hidden="true"></div>
+          <div class="map-hots" id="map-hots">
+            <button class="hot-dot" data-spot="gate" style="left:66%;top:26%"><span>1</span></button>
+            <button class="hot-dot" data-spot="library" style="left:50%;top:45%"><span>2</span></button>
+            <button class="hot-dot" data-spot="lake" style="left:58%;top:51%"><span>3</span></button>
+            <button class="hot-dot" data-spot="teaching" style="left:74%;top:61%"><span>4</span></button>
+            <button class="hot-dot" data-spot="stadium" style="left:50%;top:69%"><span>5</span></button>
+          </div>
           <div class="map-label" id="map-label">选择一处地标开始探索</div>
         </div>
         <div class="map-tools">
@@ -233,57 +195,55 @@
       </div>
 
       <aside class="spot-panel reveal" id="spot-panel">
-        <div class="spot-cover" id="spot-cover">✦</div>
+        <div class="spot-cover" id="spot-cover"><img id="spot-photo" src="images/aerial.jpg" alt="地标实景" /></div>
         <h3 id="spot-name">广州大学 · 校园地标</h3>
-        <p id="spot-desc">点击地图上的金色光点，即可查看该地标的介绍与专属声音。</p>
-        <div class="spot-sound">
-          <button class="btn btn-gold btn-sm" id="spot-play">▶ 播放专属声音</button>
-          <span class="sound-status" id="spot-status">静候聆听</span>
-        </div>
+        <p id="spot-desc">点击航拍图上的金色光点，即可查看该地标的实景与介绍。</p>
         <ul class="spot-meta" id="spot-meta"></ul>
       </aside>
     </div>
   </section>
 
-  <!-- ============ 三、声音地图 ============ -->
-  <section id="sound" class="sec sound">
+  <!-- ============ 校园掠影 ============ -->
+  <section id="gallery" class="sec gallery">
     <header class="sec-head reveal">
-      <span class="sec-tag">叁 · 声音地图</span>
-      <h2>聆听 · 广大之声</h2>
-      <p class="sec-desc">用声音重绘校园记忆。点击一枚「声音」，闭眼倾听广大的呼吸。</p>
+      <span class="sec-tag">叁 · 校园掠影</span>
+      <h2>光影 · 广大</h2>
+      <p class="sec-desc">用镜头定格校园的地标与四季晨昏，点击图片可放大欣赏。</p>
     </header>
 
-    <div class="sound-grid reveal" id="sound-grid">
-      <button class="sound-tile" data-sound="bell">
-        <span class="sound-ico">🔔</span><h3>钟楼晨钟</h3><p>悠远钟声，唤醒清晨</p>
-      </button>
-      <button class="sound-tile" data-sound="page">
-        <span class="sound-ico">📖</span><h3>图书馆翻书</h3><p>静谧书香，纸页轻响</p>
-      </button>
-      <button class="sound-tile" data-sound="water">
-        <span class="sound-ico">💧</span><h3>中心湖流水</h3><p>涟漪轻漾，湖风拂面</p>
-      </button>
-      <button class="sound-tile" data-sound="bird">
-        <span class="sound-ico">🐦</span><h3>林间鸟鸣</h3><p>晨光树影，啼声清脆</p>
-      </button>
-      <button class="sound-tile" data-sound="piano">
-        <span class="sound-ico">🎹</span><h3>演艺中心琴音</h3><p>音符流淌，青春旋律</p>
-      </button>
-      <button class="sound-tile" data-sound="crowd">
-        <span class="sound-ico">🎉</span><h3>体育馆欢呼</h3><p>热血赛场，掌声雷动</p>
-      </button>
+    <div class="gal-grid reveal">
+      <figure class="gal-item"><img src="images/library.jpg" alt="广州大学图书馆" loading="lazy"><figcaption>图书馆</figcaption></figure>
+      <figure class="gal-item"><img src="images/performing_arts.jpg" alt="广州大学演艺中心" loading="lazy"><figcaption>演艺中心</figcaption></figure>
+      <figure class="gal-item"><img src="images/stadium.jpg" alt="何世杰体育馆" loading="lazy"><figcaption>体育馆</figcaption></figure>
+      <figure class="gal-item"><img src="images/clock_tower.jpg" alt="广场钟楼" loading="lazy"><figcaption>广场钟楼</figcaption></figure>
+      <figure class="gal-item"><img src="images/center_lake.jpg" alt="中心湖" loading="lazy"><figcaption>中心湖</figcaption></figure>
+      <figure class="gal-item"><img src="images/gate.jpg" alt="正门" loading="lazy"><figcaption>正门</figcaption></figure>
+      <figure class="gal-item"><img src="images/motto_tower.jpg" alt="校训塔" loading="lazy"><figcaption>校训塔</figcaption></figure>
+      <figure class="gal-item"><img src="images/library_night.jpg" alt="图书馆夜景" loading="lazy"><figcaption>图书馆夜景</figcaption></figure>
     </div>
+  </section>
 
-    <div class="sound-player reveal">
-      <canvas id="wave" width="640" height="120"></canvas>
-      <p class="sound-now" id="sound-now">点击上方声音，开始聆听</p>
+  <!-- ============ 百年祝福 ============ -->
+  <section id="wish" class="sec wish">
+    <header class="sec-head reveal">
+      <span class="sec-tag">肆 · 百年祝福</span>
+      <h2>点亮 · 广大的祝福</h2>
+      <p class="sec-desc">在百年华诞之际，留下一句祝福，点亮一盏属于你的心愿灯。</p>
+    </header>
+
+    <div class="wish-box reveal">
+      <div class="wish-bar">
+        <input type="text" id="wish-text" maxlength="30" placeholder="写下你对广大的祝福……" autocomplete="off" />
+        <button class="btn btn-gold" id="wish-send">点亮祝福 ✦</button>
+      </div>
+      <div class="wish-sky" id="wish-sky"></div>
     </div>
   </section>
 
   <!-- ============ 四、数据画卷 ============ -->
   <section id="data" class="sec data">
     <header class="sec-head reveal">
-      <span class="sec-tag">肆 · 数据可视化</span>
+      <span class="sec-tag">伍 · 数据可视化</span>
       <h2>百年 · 数据画卷</h2>
       <p class="sec-desc">一组流动的数据，勾勒广大的成长轨迹。<small>（数据来源：广州大学官网学校简介，2026 年 9 月更新）</small></p>
     </header>
@@ -314,7 +274,7 @@
   <!-- ============ 五、拾忆游戏 ============ -->
   <section id="game" class="sec game">
     <header class="sec-head reveal">
-      <span class="sec-tag">伍 · 游戏化探索</span>
+      <span class="sec-tag">陆 · 游戏化探索</span>
       <h2>拾忆 · 拼出百年</h2>
       <p class="sec-desc">在限时内点击飘动的金色记忆碎片，集齐八字校训，解锁百年印记。</p>
     </header>
@@ -338,7 +298,7 @@
   <!-- ============ 六、AI 寄语 ============ -->
   <section id="ai" class="sec ai">
     <header class="sec-head reveal">
-      <span class="sec-tag">陆 · AI 创意</span>
+      <span class="sec-tag">柒 · AI 创意</span>
       <h2>写给广大的百年寄语</h2>
       <p class="sec-desc">一句由「AI 灵感引擎」为你随机织就的校庆祝福，生成属于你的专属寄语。</p>
     </header>
@@ -361,7 +321,7 @@
     <p class="foot-motto">博学笃行 · 与时俱进</p>
     <p class="foot-line">百年薪火，弦歌不辍；奋进广大，赓续华章。</p>
     <p class="foot-copy">广州大学第二十二届学术科技节 · 网页设计大赛 · 方向二｜交互体验网页</p>
-    <p class="foot-note">本页为参赛原创作品 · 校园地图为艺术化示意，校史与数据整理自广州大学官网及图书馆公开资料</p>
+    <p class="foot-note">本页为参赛原创作品 · 校园实景图片整理自广州大学官网「校园风景」栏目，校史与数据整理自学校公开资料</p>
   </footer>
 </main>
 
